@@ -36,7 +36,7 @@ about:
   license: BSD 3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Small library to parse GraphML files in Python'
+  summary: 'Small library to parse GraphML files in Python.'
   license_family: BSD
 
 extra:
