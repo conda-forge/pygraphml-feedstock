@@ -1,6 +1,6 @@
 {% set name = "pygraphml" %}
-{% set version = "2.2" %}
-{% set sha256 = "cbc3aedcf9b2d3c7c7c47c75182588b334ee3cb6ad0df047d2b368cdb0a8dd1b" %}
+{% set version = "2.4.1" %}
+{% set sha256 = "bd217a8c1461d24306cb597f3bc7e6cc8bb270a67a3c7b2a27b0de3c1ff30a72" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
