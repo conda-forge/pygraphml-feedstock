@@ -25,9 +25,9 @@ requirements:
 
 test:
   requires:
-    - nose
+    - nose2
   commands:
-    - "nosetests -v -s ."
+    - "python -c 'from pygraphml.tests import run_all; run_all()'"
   imports:
     - pygraphml
 
