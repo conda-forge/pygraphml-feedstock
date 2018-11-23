@@ -7,7 +7,7 @@ Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Small library to parse GraphML files in Python
+Summary: Small library to parse GraphML files in Python.
 
 
 
