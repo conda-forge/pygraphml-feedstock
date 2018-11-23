@@ -1,20 +1,18 @@
 {% set name = "pygraphml" %}
-{% set version = "2.2" %}
-{% set sha256 = "cbc3aedcf9b2d3c7c7c47c75182588b334ee3cb6ad0df047d2b368cdb0a8dd1b" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: bd217a8c1461d24306cb597f3bc7e6cc8bb270a67a3c7b2a27b0de3c1ff30a72
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vvv  --no-deps"
 
 requirements:
   host:
@@ -26,12 +24,18 @@ requirements:
     - python
 
 test:
+  requires:
+    - nose
+  commands:
+    - "nosetests -v -s ."
   imports:
     - pygraphml
 
 about:
   home: https://github.com/hadim/pygraphml/
   license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE
   summary: 'Small library to parse GraphML files in Python'
   license_family: BSD
 
