@@ -6,15 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bd217a8c1461d24306cb597f3bc7e6cc8bb270a67a3c7b2a27b0de3c1ff30a72
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  noarch: true
+  script: "{{ PYTHON }} -m pip install . -vvv  --no-deps"
 
 requirements:
   host:
@@ -26,6 +24,10 @@ requirements:
     - python
 
 test:
+  requires:
+    - nose
+  commands:
+    - "nosetests -v -s ."
   imports:
     - pygraphml
 
